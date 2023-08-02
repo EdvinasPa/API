@@ -1,7 +1,6 @@
 package codeacademy.API.services;
 
 import codeacademy.API.entities.Book;
-import codeacademy.API.entities.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class BookServices {
         bookList.addAll(Arrays.asList(book1, book2, book3, book4));
     }
 
-    public Optional<Book> getBook(Integer id) {
+    public Optional<Book> getBook(Long id) {
         Optional<Book> optional = Optional.empty();
         for (Book book : bookList) {
             if (id.equals(book.getId())) {

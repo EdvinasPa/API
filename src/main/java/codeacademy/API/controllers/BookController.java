@@ -2,7 +2,6 @@ package codeacademy.API.controllers;
 
 
 import codeacademy.API.entities.Book;
-import codeacademy.API.entities.Users;
 import codeacademy.API.services.BookServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +22,7 @@ public class BookController {
     }
 
     @GetMapping("/book")
-    public Book getBook(@RequestParam Integer id) {
+    public Book getBook(@RequestParam Long id) {
         Optional book = bookservices.getBook(id);
         if (book.isPresent()){
             return (Book) book.get();
