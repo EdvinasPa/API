@@ -1,7 +1,6 @@
 package codeacademy.API.controllers;
 
 import codeacademy.API.entities.Author;
-import codeacademy.API.entities.Users;
 import codeacademy.API.services.AuthorServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
