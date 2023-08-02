@@ -1,20 +1,30 @@
 package codeacademy.API.entities;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 
-
+@Entity
 @Getter
 @Setter
+@Table(name = "Book")
 public class Book {
-
+    @Id
+    @Column(name = "id_book")
     private Long id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "genre")
     private String genre;
+    @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "quantity")
     private Integer quantity;
 
     public Book(int id, String title, String genre, Double price, Integer quantity) {

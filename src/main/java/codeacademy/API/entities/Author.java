@@ -1,17 +1,23 @@
 package codeacademy.API.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "Author")
 public class Author {
     @Id
+    @Column(name = "id_author")
     private Long id;
+    @Column(name = "authorName")
     private String authorName;
+    @Column(name = "nationality")
     private String nationality;
 
 

@@ -1,18 +1,27 @@
 package codeacademy.API.entities;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
+@Entity
 @Getter
 @Setter
+@Table(name = "Users")
 
 
 public class Users {
-
+    @Id
+    @Column(name = "id_users")
     private int id;
+    @Column(name = "Name")
     private String name;
+    @Column(name = "age")
     private int age;
+    @Column(name = "email")
     private String email;
 
     public Users(int id, String name, int age, String email) {
