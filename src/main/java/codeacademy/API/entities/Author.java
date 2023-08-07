@@ -1,12 +1,12 @@
 package codeacademy.API.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,6 +21,8 @@ public class Author {
     private String authorName;
     @Column(name = "nationality")
     private String nationality;
+    @OneToMany (mappedBy = "author")
+    private List<Book> book;
 
 
     public Author(int id, String authorName, String nationality) {
@@ -28,4 +30,5 @@ public class Author {
         this.authorName = authorName;
         this.nationality = nationality;
     }
+    
 }
